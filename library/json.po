@@ -143,7 +143,7 @@ msgid ""
 "``inf``, ``-inf``) in strict compliance of the JSON specification. If "
 "*allow_nan* is true, their JavaScript equivalents (``NaN``, ``Infinity``, ``-"
 "Infinity``) will be used."
-msgstr "如果 *allow_nan* 設為 False（預設值為 ``True``），那麼串聯化 (serialize)"
+msgstr "如果 *allow_nan* 設為 False（預設值為 ``True``），那麼序列化 (serialize)"
 ":class:`float` 的特殊值 (``nan``, ``inf``, ``-inf``) 會觸發 :exc:`ValueError`，"
 "這麼設定是為了遵守較嚴格的 JSON 規範。如果設為 True，則串聯化這些極值不會出錯，而是"
 "會被自動代換成 JavaScript 上等價的值 (``NaN``, ``Infinity``, ``-Infinity``)"
@@ -156,11 +156,12 @@ msgid ""
 "default) selects the most compact representation. Using a positive integer "
 "indent indents that many spaces per level.  If *indent* is a string (such as "
 "``\"\\t\"``), that string is used to indent each level."
-msgstr ""
+msgstr "如果 *indent* 是一個非負整數或字串，那麼 JSON 序列及其所含元素，會以"
+"pretty-print 的方式顯示，並會有幾個。"
 
 #: ../../library/json.rst:175 ../../library/json.rst:459
 msgid "Allow strings for *indent* in addition to integers."
-msgstr ""
+msgstr "允許字串作為 *indent* 的值，而不只是允許整數。"
 
 #: ../../library/json.rst:178 ../../library/json.rst:462
 msgid ""
@@ -168,11 +169,15 @@ msgid ""
 "tuple.  The default is ``(', ', ': ')`` if *indent* is ``None`` and ``(',', "
 "': ')`` otherwise.  To get the most compact JSON representation, you should "
 "specify ``(',', ':')`` to eliminate whitespace."
-msgstr ""
+msgstr "*separator* 是分隔符號，``( 項跟項 (item) 之間的分隔符號, 鍵值 (key) 之間"
+"的分隔符號)`` 的 tuple。 如果 *indent* 是 ``None``，則預設值為 ``(', ', ': ')``，"
+"否則預設值為 ``(',', ': ')``。如果希望 JSON 更省空間，建議指定為 ``(',', ':')``，"
+"這樣可以消除空白。"
+
 
 #: ../../library/json.rst:183 ../../library/json.rst:467
 msgid "Use ``(',', ': ')`` as default if *indent* is not ``None``."
-msgstr ""
+msgstr "如果 *indent* 不是 ``None``，則用 ``(',', ': ')`` 當預設值"
 
 #: ../../library/json.rst:186 ../../library/json.rst:470
 msgid ""
@@ -180,13 +185,17 @@ msgid ""
 "that can't otherwise be serialized.  It should return a JSON encodable "
 "version of the object or raise a :exc:`TypeError`.  If not specified, :exc:"
 "`TypeError` is raised."
-msgstr ""
+msgstr "*default* 必須一個函式，如果你有設定它的話，遇到無法 JSON 序列化的物件時"
+"會呼叫你 *default* 設定的函式。該函式只能有兩種狀況：要不就回傳一個可以被 JSON "
+"序列化的物件，要不就拋出 :exc:`TypeError`。如果 *default* 沒有指定值，則只要遇"
+"到無法 JSON 序列化的物件就會丟出 :exc:`TypeError`。"
 
 #: ../../library/json.rst:191
 msgid ""
 "If *sort_keys* is true (default: ``False``), then the output of dictionaries "
 "will be sorted by key."
-msgstr ""
+msgstr "如果 *sort_keys* 設為 True（預設值為 False），那麼字典的輸出會按照"
+" *sort_keys* 排序。"
 
 #: ../../library/json.rst:194
 msgid ""
